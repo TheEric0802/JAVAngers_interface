@@ -21,14 +21,18 @@ public class Main {
             System.exit(0);
         }
 
+        MediaController mc;
+
         switch (fileExtension) {
             case ".mp3":
                 MusicPlayer mp = new MusicPlayer(filePath);
-                mp.play();
+                mc = new MediaController(mp);
+                mc.playMedia();
                 break;
             case ".mp4":
                 VideoPlayer vp = new VideoPlayer(file);
-                vp.play();
+                mc = new MediaController(vp);
+                mc.playMedia();
                 break;
         }
 
